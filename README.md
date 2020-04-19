@@ -7,7 +7,7 @@ Steps to reproduce:
 
  - Open up ports on your servers firewall that match nginx.conf and docker-compose file(s)
  - Change ```<hostname>``` in nginx.conf to your hostname. 
- - Generate SSL certs:
+ - Create a folder named ```ssl``` inside ./nginx folder, & generate SSL certs:
     - Open the command line and run these commands inside the ssl folder to generate a self signed certificate:
     
       ```openssl req -new -newkey rsa:4096 -x509 -sha512 -days 365 -nodes -out nginx.crt -keyout nginx.key```
