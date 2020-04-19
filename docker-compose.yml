@@ -1,0 +1,23 @@
+version: "3"
+
+services:
+  neo4j:
+    image: "library/neo4j:3.5.17"
+    ports:
+      - "7474:7474"
+      - "7687:7687"
+    volumes:
+      - /opt/ownr/neo4j/data:/data
+      - /opt/ownr/neo4j/logs:/logs
+      - /opt/ownr/neo4j/import:/var/lib/neo4j/import
+  nginx:
+    image: nginx:1.14
+    container_name: nginx
+    ports:
+      - "7700:7700"
+      - "7701:7701"
+    volumes:
+      - ./nginx:/etc/nginx/conf.d
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./apps/static:/static
+
