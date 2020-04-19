@@ -6,7 +6,7 @@ NOTE - This is a WIP and only works on http as of 4/19/20
 Steps to reproduce:
 
  - Open up ports on your servers firewall that match nginx.conf and docker-compose file(s)
- - Change <hostname> in nginx.conf to your hostname. 
+ - Change ```<hostname>``` in nginx.conf to your hostname. 
  - Generate SSL certs:
     - Open the command line and run these commands inside the ssl folder to generate a self signed certificate:
     
