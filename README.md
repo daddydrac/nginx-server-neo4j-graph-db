@@ -21,7 +21,9 @@ Steps to reproduce:
  ``` docker-compose up -d --build ```
  
  http is avail on:
- http://<DNS_SERVER_NAME>:7474/browser/
+ 
+ ```http://<DNS_SERVER_NAME>:7474/browser/```
  
  https is avail on: 
- https://<DNS_SERVER_NAME>/browser/
+ 
+ ```https://<DNS_SERVER_NAME>/browser/```
