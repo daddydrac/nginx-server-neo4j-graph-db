@@ -25,7 +25,7 @@ Nginx server for NEO4J Graph Database and NEO4J REST API
  
  ```https://<hostname>/browser/```
  
- -------------------------------------------------------------------
+
  
  ## Access REST API
  
@@ -69,8 +69,10 @@ print(r.text)
 ```
  
 Addt'l documentation on the REST API can be found here: ```https://neo4j.com/docs/rest-docs/3.5/```
+
  
 --------------------------------------------------------------------
+
  
  ## Add Addt'l users
 
