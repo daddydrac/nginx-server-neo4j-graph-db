@@ -1,9 +1,9 @@
 ## NGINX Server for NEO4J Graph DB
 Nginx server for NEO4J Graph Database and NEO4J REST API
 
-NOTE - This is a WIP and only works on http as of 4/19/20
+#### Configuration directions
 
-Steps to reproduce:
+<em>Do this prior to running the container command:</em>
 
  - Open up ports on your servers firewall that match nginx.conf and docker-compose file(s)
  - Change ```<hostname>``` in nginx.conf to your hostname. 
@@ -17,14 +17,10 @@ Steps to reproduce:
       ```openssl dhparam -out dhparam.pem 4096```
  
  
- Run in root:
+ 1. Go into the root folder and run:
  
  ``` docker-compose up -d --build ```
  
- http is avail on:
+ 2. https is avail on: 
  
- ```http://<DNS_SERVER_NAME>:7474/browser/```
- 
- https is avail on: 
- 
- ```https://<DNS_SERVER_NAME>/browser/```
+ ```https://<hostname>/browser/```
