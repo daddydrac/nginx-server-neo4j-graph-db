@@ -27,7 +27,7 @@ Nginx server for NEO4J Graph Database and NEO4J REST API
  
  --------------------------------------------------------------------
  
- #### Add Addt'l users
+ ### Add Addt'l users
 
 <strong>1. Add a user</strong>
 
