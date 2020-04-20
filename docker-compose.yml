@@ -17,8 +17,8 @@ services:
     - "7687:7687"
     - "7688:7688"
     volumes:
-    - ./nginx.conf:/etc/nginx/nginx.conf
-    - ./ssl:/etc/nginx/conf.d/ssl
+    - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+    - ./nginx/ssl:/etc/nginx/conf.d/ssl
 
 networks:
   local:
