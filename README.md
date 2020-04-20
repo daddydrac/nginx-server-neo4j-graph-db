@@ -24,3 +24,21 @@ Nginx server for NEO4J Graph Database and NEO4J REST API
  2. https is avail on: 
  
  ```https://<hostname>/browser/```
+ 
+ --------------------------------------------------------------------
+ 
+ #### Add Addt'l users
+
+<strong>1. Add a user</strong>
+
+The following commands can be entered inside the NEO4J UI where you eneter your Cypher queries.
+
+1. The following example creates a user with the username 'johnsmith' and password 'h6u4%kr'. When the user 'johnsmith' logs in for the first time, he will be required to change his password. 
+
+```CALL dbms.security.createUser('johnsmith', 'h6u4%kr', true)```
+
+<strong>2. Delete a user</strong>
+
+The following example deletes a user with the username 'janebrown'.
+
+```CALL dbms.security.deleteUser('janebrown')```
