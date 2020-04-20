@@ -25,9 +25,54 @@ Nginx server for NEO4J Graph Database and NEO4J REST API
  
  ```https://<hostname>/browser/```
  
- --------------------------------------------------------------------
+ -------------------------------------------------------------------
  
- ### Add Addt'l users
+ ## Access REST API
+ 
+<strong>Get service root</strong>
+The service root is your starting point to discover the REST API. It contains the basic starting points for the database, and some version and extension information.
+
+Example request:
+
+```
+GET http://localhost:7474/db/data/
+Accept: application/json; charset=UTF-8
+Example response
+
+200: OK
+Content-Type: application/json;charset=utf-8
+```
+
+<strong>RESTful Python example to CREATE a store and a customer with Cypher (CQL)</strong>
+
+```
+create_my_store_with_customer = {
+    "statements": [
+        {
+            "statement": 'MERGE (customer:Customer { customer_id:"1", customer_name:"mary" })' +
+            'MERGE (store:MyStore { my_store: "El Bodega" })' +
+            'MERGE (store)-[:store_relationship_to]->(customer)' +
+            'RETURN customer, store'
+        }
+    ]
+}
+
+url = "http://localhost:7474/db/neo4j/tx/commit"
+headers = {
+    'Content-Type': 'application/json',
+    'Accept': 'application/json;charset=UTF-8',
+}
+
+r = requests.request("POST", url, data=json.dumps(create_my_store_with_customer), headers=headers)
+print(r.text)
+
+```
+ 
+Addt'l documentation on the REST API can be found here: ```https://neo4j.com/docs/rest-docs/3.5/```
+ 
+--------------------------------------------------------------------
+ 
+ ## Add Addt'l users
 
 <strong>1. Add a user</strong>
 
