@@ -4,6 +4,10 @@ services:
   neo4j:
     image: neo4j:3.5.16
     container_name: neo4j
+    volumes:
+      - /opt/neo4j/data:/data
+    environment:
+    -  NEO4J_ACCEPT_LICENSE_AGREEMENT=yes
     networks:
     - local
   nginx:
