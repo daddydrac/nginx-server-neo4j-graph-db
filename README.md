@@ -5,8 +5,8 @@ Nginx server for NEO4J Graph Database and NEO4J REST API
 
 <em>Do this prior to running the container command:</em>
 
- - Open up ports on your servers firewall that match nginx.conf and docker-compose file(s)
- - Change ```<hostname>``` in nginx.conf to your hostname. 
+ - Open up ports on your servers firewall that match nginx.conf and docker-compose file(s) if needed
+ ~~- Change ```<hostname>``` in nginx.conf to your hostname. 
  - Create a folder named ```ssl``` inside ./nginx folder, & generate SSL certs:
     - Open the command line and run these commands inside the ssl folder to generate a self signed certificate:
     
@@ -23,7 +23,8 @@ Nginx server for NEO4J Graph Database and NEO4J REST API
  
  2. https is avail on: 
  
- ```https://<hostname>/browser/```
+ ```https://<hostname>/browser/``` or
+ ```https://localhost/browser```
  
  <br />
 
