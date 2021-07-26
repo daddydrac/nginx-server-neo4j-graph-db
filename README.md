@@ -36,36 +36,29 @@ The service root is your starting point to discover the REST API. It contains th
 Example request:
 
 ```
-GET http://localhost:7474/db/data/
-Accept: application/json; charset=UTF-8
-Example response
+  ### Graph DB REST API Route & header info.
+  url = "http://localhost:7474/db/data/transaction/commit"
+ 
+  #Base64 encode user:pass with colon, this example uses neo4j:superpassword must change in Neo4J admin first 
+  headers = {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json;charset=UTF-8',
+      'Authorization': 'Basic ' + 'bmVvNGo6c3VwZXJwYXNzd29yZA=='
+  }
 
-200: OK
-Content-Type: application/json;charset=utf-8
-```
+  ### CQL - Cypher Query Language to $POST meta objects to graph structure, with student example
+  create_student = {
+      "statements": [
+          {
+              "statement":'MERGE (student:Student { student_id:"' + str(employee["id"]) +'"})' +
+                          'MERGE (teacher:Teacher { classroom_graph: "classroom" })' +
+                          'MERGE (teacher)-[:STUDENT_TEACHER]->(student)' +
+                          'RETURN student, teacher'
+          }
+      ]
 
-<strong>RESTful Python example to CREATE a store and a customer with Cypher (CQL)</strong>
-
-```
-create_my_store_with_customer = {
-    "statements": [
-        {
-            "statement": 'MERGE (customer:Customer { customer_id:"1", customer_name:"mary" })' +
-            'MERGE (store:MyStore { my_store: "El Bodega" })' +
-            'MERGE (store)-[:store_relationship_to]->(customer)' +
-            'RETURN customer, store'
-        }
-    ]
-}
-
-url = "http://localhost:7474/db/neo4j/tx/commit"
-headers = {
-    'Content-Type': 'application/json',
-    'Accept': 'application/json;charset=UTF-8',
-}
-
-r = requests.request("POST", url, data=json.dumps(create_my_store_with_customer), headers=headers)
-print(r.text)
+  }
+  r = requests.request("POST", url, data=json.dumps(create_employee_activity), headers=headers, verify=False)
 
 ```
  
