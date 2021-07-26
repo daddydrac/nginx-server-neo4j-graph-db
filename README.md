@@ -60,7 +60,7 @@ Example request:
       ]
 
   }
-  r = requests.request("POST", url, data=json.dumps(create_employee_activity), headers=headers, verify=False)
+  r = requests.request("POST", url, data=json.dumps(create_student), headers=headers, verify=False)
 
 ```
  
