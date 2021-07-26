@@ -40,7 +40,8 @@ Example request:
   ### Graph DB REST API Route & header info.
   url = "http://localhost:7474/db/data/transaction/commit"
  
-  #Base64 encode user:pass with colon, this example uses neo4j:superpassword must change in Neo4J admin first 
+  # Base64 encode user:pass with colon, this example uses 
+  # neo4j:superpassword must change in Neo4J admin first.
   headers = {
       'Content-Type': 'application/json',
       'Accept': 'application/json;charset=UTF-8',
@@ -51,7 +52,7 @@ Example request:
   create_student = {
       "statements": [
           {
-              "statement":'MERGE (student:Student { student_id:"' + str(employee["id"]) +'"})' +
+              "statement":'MERGE (student:Student { student_id:"' + str(student["id"]) +'"})' +
                           'MERGE (teacher:Teacher { classroom_graph: "classroom" })' +
                           'MERGE (teacher)-[:STUDENT_TEACHER]->(student)' +
                           'RETURN student, teacher'
